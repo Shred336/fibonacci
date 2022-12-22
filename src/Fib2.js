@@ -88,12 +88,24 @@ const Fib2 = () => {
     if (result === null) {
       return;
     }
-    return `${result} is the ${ordinal(term)} number in the fibonacci sequence
+    return `${fun(result)} is the ${ordinal(
+      term
+    )} number in the fibonacci sequence
     `;
 
     //buttons
   };
+  //  console.log("Example to add comma to number");
 
+  function fun(num) {
+    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
+  function fun(num) {
+    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
+
+  //console.log(n1);
+  //console.log(n2);
   // function decrementInpt() {
   //   setInpt((prevInpt) => prevInpt - 1);
   // }
@@ -152,7 +164,7 @@ const Fib2 = () => {
         <span>(sequence or series)</span>
         <div id="noun">noun</div>
         <div id="statement">
-          a series of numbers in which each number (Fibonacci number) is the sum
+          A series of numbers in which each number (Fibonacci number) is the sum
           of the two preceding numbers. The simplest example is the series 1, 1,
           2, 3, 5, 8, etc.
           <p>
