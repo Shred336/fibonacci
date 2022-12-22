@@ -136,11 +136,15 @@ const Fib2 = () => {
             </button> */}
           </div>
 
-          <div className="result">
-            <p>{getSentence()}</p>
-          </div>
+          <div className="outputContainer">
+            {result && (
+              <div className="result">
+                <p>{getSentence()}</p>
+              </div>
+            )}
 
-          <div className="error">{error}</div>
+            {error && <div className="error">{error}</div>}
+          </div>
         </div>
       </div>
       <div className="foot">
@@ -148,9 +152,9 @@ const Fib2 = () => {
         <span>(sequence or series)</span>
         <div id="noun">noun</div>
         <div id="statement">
-          a series of numbers in which each number ( Fibonacci number ) is the
-          sum of the two preceding numbers. The simplest example is the series
-          1, 1, 2, 3, 5, 8, etc.
+          a series of numbers in which each number (Fibonacci number) is the sum
+          of the two preceding numbers. The simplest example is the series 1, 1,
+          2, 3, 5, 8, etc.
           <p>
             The Fibonacci sequence was first discussed in Europe by Leonardo of
             Pisa (whose nickname was Fibonacci) in the early 13th century,

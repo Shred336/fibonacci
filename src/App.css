@@ -13,6 +13,30 @@ head {
   background-color:grey;
   
 }
+.outputContainer {
+  background-color: rgba(255,0,0,0.3);
+  margin: 10px;
+  height: 50px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.result {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.result p {
+  font-size: 13pt;
+  font-family: monospace;
+  font-weight: 600;
+  padding: 0;
+  margin: 0;
+}
+
 .container {
   background-color:rgb(255, 255, 255);
   height: 100vh;
@@ -23,12 +47,12 @@ head {
   overflow: hidden;
   position: relative;
   padding: none;
+outline: 1px solid green;
 }
 .contents {
-  
-  max-width: 300px;
+  max-height: 271px;
+  max-width: 500px;
   text-align: center;
-  padding: 10px;
   height: 100%;
   justify-content: center;
   align-items: center;
@@ -50,11 +74,7 @@ body{
   overflow: hidden;
   position:inherit;
 }
-.bos {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+
 .inputContainer input {
   display: flex;
   height: 100%;
@@ -170,7 +190,7 @@ input[type="number"] {
   }
   #pronounce {
     position:relative;
-    font-size: 2em;
+    font-size: 1.7em;
     font-family: monospace;
     font-weight: 100;
     display: inline-flex;
