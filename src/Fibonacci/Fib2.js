@@ -1,16 +1,15 @@
-import React, { useState, useEffect } from "react";
-import spiral from "./spiral.png";
+import "./Fib2.css";
+import React, { useState } from "react";
+import Statement from "./Statement";
+import spiral from "../spiral.png";
 // console.log(spiral);
 
 const Fib2 = () => {
   const [result, setResult] = useState(null);
-
   const [term, setTerm] = useState(null);
-
   const [error, setError] = useState(null);
 
   // const [inpt, setInpt] = useState(null);
-
   const checkKey = (e) => {
     if (e.keyCode === 13) {
       checkInput();
@@ -37,7 +36,7 @@ const Fib2 = () => {
       setResult(null);
       setError("Invalid Input");
     }
-
+    console.log("whos a faggot now eh?");
     // console.log("checkInputRan");
   };
 
@@ -85,9 +84,6 @@ const Fib2 = () => {
   };
 
   const getSentence = () => {
-    if (result === null) {
-      return;
-    }
     return `${fun(result)} is the ${ordinal(
       term
     )} number in the fibonacci sequence
@@ -100,18 +96,18 @@ const Fib2 = () => {
   function fun(num) {
     return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   }
-  function fun(num) {
-    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-  }
 
-  //console.log(n1);
-  //console.log(n2);
-  // function decrementInpt() {
-  //   setInpt((prevInpt) => prevInpt - 1);
-  // }
-  // function incrementInpt() {
-  //   setInpt((prevInpt) => prevInpt + 1);
-  // }
+  const getContents = () => {
+    if (result === null) {
+      return <div className="error">{error}</div>;
+    } else {
+      return (
+        <div className="result">
+          <p>{getSentence()}</p>
+        </div>
+      );
+    }
+  };
 
   return (
     <div className="container">
@@ -128,13 +124,10 @@ const Fib2 = () => {
           </div>
 
           <div className="inputContainer">
-            {/* <button className="buttons" onClick={decrementInpt}>
-              -
-            </button> */}
-
             <input
               type="number"
               // onBlur={checkInput}
+
               onChange={checkInput}
               onKeyUp={checkKey}
               onKeyDown={dontE}
@@ -142,43 +135,12 @@ const Fib2 = () => {
               placholder="Enter number here..."
               className="inputBox"
             />
-
-            {/* <button className="buttons" onClick={incrementInpt}>
-              +
-            </button> */}
           </div>
 
-          <div className="outputContainer">
-            {result && (
-              <div className="result">
-                <p>{getSentence()}</p>
-              </div>
-            )}
-
-            {error && <div className="error">{error}</div>}
-          </div>
+          <div className="outputContainer">{getContents()}</div>
         </div>
       </div>
-      <div className="foot">
-        <div id="pronounce">Fi·bo·nac·ci </div>
-        <span>(sequence or series)</span>
-        <div id="noun">noun</div>
-        <div id="statement">
-          A series of numbers in which each number (Fibonacci number) is the sum
-          of the two preceding numbers. The simplest example is the series 1, 1,
-          2, 3, 5, 8, etc.
-          <p>
-            The Fibonacci sequence was first discussed in Europe by Leonardo of
-            Pisa (whose nickname was Fibonacci) in the early 13th century,
-            although the sequence can be traced back to about 200 BCE in Indian
-            literature. This sequence has produced a large amount of literature
-            and has connections to many branches of mathematics. In the
-            Fibonacci sequence, each term is the sum of the two preceding terms.
-            So if an is the nth term, we can write a1=a2=1andan=an−1+an−2, for
-            n≥3.
-          </p>
-        </div>
-      </div>
+      <Statement />
     </div>
   );
 };

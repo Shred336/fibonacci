@@ -72,7 +72,7 @@ body{
   border-radius: 8px;
   overflow: hidden;
   position:inherit;
-  width: 100%;
+  width: 98%;
   max-width: 500px;
 }
 
@@ -205,4 +205,8 @@ font-weight: 600;
 }
 #statement {
 position: relative;
+}
+#statement b {
+  font-family: 'Courier New', Courier, monospace;
+font-size: 22pt;
 }
